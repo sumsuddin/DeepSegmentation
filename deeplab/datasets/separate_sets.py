@@ -55,7 +55,7 @@ def main(unused_argv):
 
   _write_to_text_file(FLAGS.dataset_dir, "trainval.txt", filenames)
   _write_to_text_file(FLAGS.dataset_dir, "train.txt", train_set)
-  _write_to_text_file(FLAGS.dataset_dir, "valid.txt", validation_set)
+  _write_to_text_file(FLAGS.dataset_dir, "val.txt", validation_set)
 
 
 if __name__ == '__main__':
