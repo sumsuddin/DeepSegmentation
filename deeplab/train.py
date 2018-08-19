@@ -167,7 +167,7 @@ flags.DEFINE_string('train_split', 'train',
 flags.DEFINE_string('dataset_dir', None, 'Where the dataset reside.')
 
 
-def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
+def _build_deeplab(inputs_queue, outputs_to_num_classes, label_weights, ignore_label):
   """Builds a clone of DeepLab.
 
   Args:
@@ -218,7 +218,7 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
         samples[common.LABEL],
         num_classes,
         ignore_label,
-        label_weights=[5, 30, 10, 5],
+        label_weights= label_weights,
         upsample_logits=FLAGS.upsample_logits,
         scope=output)
 
@@ -274,7 +274,8 @@ def main(unused_argv):
       model_fn = _build_deeplab
       model_args = (inputs_queue, {
           common.OUTPUT_TYPE: dataset.num_classes
-      }, dataset.ignore_label)
+      }, dataset.label_weights,
+                    dataset.ignore_label)
       clones = model_deploy.create_clones(config, model_fn, args=model_args)
 
       # Gather update_ops from the first clone. These contain, for example,
