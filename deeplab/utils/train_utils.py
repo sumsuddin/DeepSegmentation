@@ -48,7 +48,7 @@ def add_softmax_cross_entropy_loss_for_each_scale(scales_to_logits,
     raise ValueError('No label for softmax cross entropy loss.')
 
   if label_weights is None or len(label_weights) != num_classes:
-    raise ValueError('label_weights lenth have to be same as the num_classes')
+    raise ValueError('label_weights length must be equal to num_classes')
 
   for scale, logits in six.iteritems(scales_to_logits):
     loss_scope = None

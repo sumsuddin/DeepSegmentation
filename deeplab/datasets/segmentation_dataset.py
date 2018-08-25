@@ -76,7 +76,8 @@ DatasetDescriptor = collections.namedtuple(
                       # foreground classes + 1 background class in the PASCAL
                       # VOC 2012 dataset. Thus, we set num_classes=21.
      'ignore_label',  # Ignore label value.
-     'label_weights', # Weights for each labels
+     'label_weights', # List of weights for each class label. Length of the
+                      # list must equal to num_classes.
     ]
 )
 
