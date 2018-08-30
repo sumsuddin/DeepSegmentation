@@ -98,10 +98,10 @@ _SEMANTIC_PREDICTION_SAVE_FOLDER = 'segmentation_results'
 _RAW_SEMANTIC_PREDICTION_SAVE_FOLDER = 'raw_segmentation_results'
 
 # The format to save image.
-_IMAGE_FORMAT = '%06d_image'
+_IMAGE_FORMAT = '%s_image'
 
 # The format to save prediction
-_PREDICTION_FORMAT = '%06d_prediction'
+_PREDICTION_FORMAT = '%s_prediction'
 
 # To evaluate Cityscapes results on the evaluation server, the labels used
 # during training should be mapped to the labels for evaluation.
@@ -163,19 +163,20 @@ def _process_batch(sess, original_images, semantic_predictions, image_names,
     semantic_prediction = np.squeeze(semantic_predictions[i])
     crop_semantic_prediction = semantic_prediction[:image_height, :image_width]
 
+    image_filename = os.path.basename(image_names[i].decode("utf-8"))
+
     # Save image.
     save_annotation.save_annotation(
-        original_image, save_dir, _IMAGE_FORMAT % (image_id_offset + i),
+        original_image, save_dir, _IMAGE_FORMAT % image_filename,
         add_colormap=False)
 
     # Save prediction.
     save_annotation.save_annotation(
         crop_semantic_prediction, save_dir,
-        _PREDICTION_FORMAT % (image_id_offset + i), add_colormap=True,
+        _PREDICTION_FORMAT % image_filename, add_colormap=True,
         colormap_type=FLAGS.colormap_type)
 
     if FLAGS.also_save_raw_predictions:
-      image_filename = os.path.basename(image_names[i])
 
       if train_id_to_eval_id is not None:
         crop_semantic_prediction = _convert_train_id_to_eval_id(

@@ -1,0 +1,50 @@
+python train.py \
+            --logtostderr \
+            --training_number_of_steps=30000 \
+            --train_split="train" \
+            --model_variant="mobilenet_v2" \
+            --atrous_rates=12 \
+            --atrous_rates=24 \
+            --atrous_rates=36 \
+            --output_stride=8 \
+            --decoder_output_stride=4 \
+            --train_crop_size=240 \
+            --train_crop_size=320 \
+            --train_batch_size=24 \
+            --dataset="iris" \
+            --initialize_last_layer=False \
+            --tf_initial_checkpoint=datasets/pascal_voc_seg/init_models/deeplabv3_mnv2_pascal_train_aug/model.ckpt-30000 \
+            --train_logdir=/content/drive/Codes/training/ \
+            --dataset_dir=/content/tfrecords/
+
+python vis.py \
+            --logtostderr
+            --vis_split="val"
+            --model_variant="mobilenet_v2"
+            --atrous_rates=12
+            --atrous_rates=24
+            --atrous_rates=36
+            --output_stride=8
+            --decoder_output_stride=4
+            --vis_crop_size=241
+            --vis_crop_size=321
+            --dataset="iris"
+            --checkpoint_dir="D:\\Data\\Iris\\iris_segment\\Deeplab Output\\trained_5class"
+            --vis_logdir="D:\\Data\\Iris\\iris_segment\\Deeplab Output\\vis"
+            --dataset_dir="D:\\Data\\Iris\\iris_segment\\Deeplab Output\\tfrecords"
+            --max_number_of_iterations=1
+
+python export_model.py \
+            --logtostderr
+            --decoder_output_stride=4
+            --atrous_rates=12
+            --atrous_rates=24
+            --atrous_rates=36
+            --output_stride=8
+            --checkpoint_path=/content/drive/Codes/training/model.ckpt-30000
+            --export_path=/content/drive/Codes/training/iris_frozen.pb
+            --model_variant="mobilenet_v2"
+            --num_classes=5
+            --crop_size=240
+            --crop_size=320
+            --inference_scales=1.0
