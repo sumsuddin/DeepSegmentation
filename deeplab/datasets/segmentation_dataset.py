@@ -109,9 +109,9 @@ _IRIS_SEG_INFORMATION = DatasetDescriptor(
         'trainval': 10803,
         'val': 2160,
     },
-    num_classes=5,
-    ignore_label=255,
-    label_weights=[1, 5, 30, 10, 5],
+    num_classes=4,
+    ignore_label=4,
+    label_weights=[1, 5, 30, 10],
 )
 
 # These number (i.e., 'train'/'test') seems to have to be hard coded
