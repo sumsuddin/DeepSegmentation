@@ -1,7 +1,7 @@
 from io import BytesIO
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import cv2
 from matplotlib import gridspec
 from matplotlib import pyplot as plt

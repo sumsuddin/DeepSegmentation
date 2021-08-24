@@ -51,7 +51,7 @@ Liang-Chieh Chen*, George Papandreou*, Iasonas Kokkinos, Kevin Murphy,
 Alan L. Yuille (* equal contribution)
 (https://arxiv.org/abs/1412.7062)
 """
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplab.core import feature_extractor
 
 slim = tf.contrib.slim

@@ -20,7 +20,7 @@ colormap to the png image for better visualization.
 
 import numpy as np
 import PIL.Image as img
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from deeplab.utils import get_dataset_colormap
 

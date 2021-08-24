@@ -2,7 +2,7 @@ import glob
 import os.path
 import numpy as np
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 FLAGS = tf.app.flags.FLAGS
 

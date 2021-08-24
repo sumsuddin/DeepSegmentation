@@ -15,7 +15,7 @@
 """Exports trained model to TensorFlow frozen graph."""
 
 import os
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from tensorflow.python.tools import freeze_graph
 from deeplab import common

@@ -16,7 +16,7 @@
 """Tests for xception.py."""
 import numpy as np
 import six
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from deeplab.core import xception
 from tensorflow.contrib.slim.nets import resnet_utils

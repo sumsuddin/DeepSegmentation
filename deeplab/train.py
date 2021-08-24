@@ -18,7 +18,7 @@ See model.py for more details and usage.
 """
 
 import six
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplab import common
 from deeplab import model
 from deeplab.datasets import segmentation_dataset

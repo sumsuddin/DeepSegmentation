@@ -44,7 +44,7 @@ Tobias Weyand, Marco Andreetto, Hartwig Adam
 https://arxiv.org/abs/1704.04861
 """
 import collections
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from tensorflow.contrib.slim.nets import resnet_utils
 

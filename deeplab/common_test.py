@@ -16,7 +16,7 @@
 """Tests for common.py."""
 import copy
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from deeplab import common
 

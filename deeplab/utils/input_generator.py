@@ -14,7 +14,7 @@
 # ==============================================================================
 """Wrapper for providing semantic segmentation data."""
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplab import common
 from deeplab import input_preprocess
 

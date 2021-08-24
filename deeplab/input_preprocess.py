@@ -14,7 +14,7 @@
 # ==============================================================================
 
 """Prepares the data used for DeepLab training/evaluation."""
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplab.core import feature_extractor
 from deeplab.core import preprocess_utils
 

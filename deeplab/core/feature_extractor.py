@@ -15,7 +15,7 @@
 
 """Extracts features for different models."""
 import functools
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from deeplab.core import resnet_v1_beta
 from deeplab.core import xception

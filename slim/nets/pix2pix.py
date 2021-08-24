@@ -32,7 +32,7 @@ from __future__ import print_function
 import collections
 import functools
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 layers = tf.contrib.layers
 

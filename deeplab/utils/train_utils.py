@@ -16,7 +16,7 @@
 
 import six
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplab.core import preprocess_utils
 
 slim = tf.contrib.slim

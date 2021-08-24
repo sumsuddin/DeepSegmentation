@@ -15,7 +15,7 @@
 
 """Tests for preprocess_utils."""
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from tensorflow.python.framework import errors
 from deeplab.core import preprocess_utils

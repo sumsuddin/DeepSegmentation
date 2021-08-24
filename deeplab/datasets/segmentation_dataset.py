@@ -52,7 +52,7 @@ References:
 """
 import collections
 import os.path
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 slim = tf.contrib.slim
 
@@ -114,6 +114,17 @@ _IRIS_SEG_INFORMATION = DatasetDescriptor(
     label_weights=[1, 5, 30, 10, 5],
 )
 
+_PUPIL_SEG_INFORMATION = DatasetDescriptor(
+    splits_to_sizes={
+        'train': 8643,
+        'trainval': 10803,
+        'val': 2160,
+    },
+    num_classes=1,
+    ignore_label=255,
+    label_weights=[1],
+)
+
 # These number (i.e., 'train'/'test') seems to have to be hard coded
 # You are required to figure it out for your training/testing example.
 _ADE20K_INFORMATION = DatasetDescriptor(
@@ -132,6 +143,7 @@ _DATASETS_INFORMATION = {
     'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
     'ade20k': _ADE20K_INFORMATION,
     'iris': _IRIS_SEG_INFORMATION,
+    'pupil': _PUPIL_SEG_INFORMATION,
 }
 
 # Default file pattern of TFRecord of TensorFlow Example.
