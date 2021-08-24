@@ -120,9 +120,9 @@ _PUPIL_SEG_INFORMATION = DatasetDescriptor(
         'trainval': 10803,
         'val': 2160,
     },
-    num_classes=1,
+    num_classes=2,
     ignore_label=4,
-    label_weights=[1],
+    label_weights=[1, 1],
 )
 
 # These number (i.e., 'train'/'test') seems to have to be hard coded
