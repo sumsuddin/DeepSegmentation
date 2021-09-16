@@ -46,7 +46,7 @@ def _write_to_text_file(save_dir, text_file_name, filenames):
 
 def main(unused_argv):
 
-  input_image_dir = os.path.join(FLAGS.dataset_dir, "Learn_Image")
+  input_image_dir = os.path.join(FLAGS.dataset_dir, "Image")
   input_files = glob.glob(os.path.join(input_image_dir,
                                        '*.' + FLAGS.input_image_format))
   filenames = [os.path.splitext(os.path.basename(x))[0] for x in input_files]
