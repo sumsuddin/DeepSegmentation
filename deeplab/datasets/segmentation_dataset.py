@@ -114,6 +114,17 @@ _IRIS_SEG_INFORMATION = DatasetDescriptor(
     label_weights=[1, 5, 30, 10, 5],
 )
 
+_HIP_SEG_INFORMATION = DatasetDescriptor(
+    splits_to_sizes={
+        'train': 598,
+        'trainval': 598,
+        'val': 598,
+    },
+    num_classes=6,
+    ignore_label=255,
+    label_weights=[1, 1, 1, 1, 1, 1],
+)
+
 # These number (i.e., 'train'/'test') seems to have to be hard coded
 # You are required to figure it out for your training/testing example.
 _ADE20K_INFORMATION = DatasetDescriptor(

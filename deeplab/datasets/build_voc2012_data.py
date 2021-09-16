@@ -54,7 +54,7 @@ import math
 import os.path
 import sys
 import build_data
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -96,7 +96,7 @@ def _convert_dataset(dataset_split):
   num_images = len(filenames)
   num_per_shard = int(math.ceil(num_images / float(_NUM_SHARDS)))
 
-  image_reader = build_data.ImageReader('jpeg', channels=3)
+  image_reader = build_data.ImageReader('png', channels=1)
   label_reader = build_data.ImageReader('png', channels=1)
 
   for shard_id in range(_NUM_SHARDS):
