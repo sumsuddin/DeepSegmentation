@@ -116,9 +116,9 @@ _IRIS_SEG_INFORMATION = DatasetDescriptor(
 
 _HIP_SEG_INFORMATION = DatasetDescriptor(
     splits_to_sizes={
-        'train': 598,
+        'train': 479,
         'trainval': 598,
-        'val': 598,
+        'val': 119,
     },
     num_classes=6,
     ignore_label=255,
@@ -143,6 +143,7 @@ _DATASETS_INFORMATION = {
     'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
     'ade20k': _ADE20K_INFORMATION,
     'iris': _IRIS_SEG_INFORMATION,
+    "hip_dysplasia": _HIP_SEG_INFORMATION
 }
 
 # Default file pattern of TFRecord of TensorFlow Example.
