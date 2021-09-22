@@ -120,9 +120,9 @@ _HIP_SEG_INFORMATION = DatasetDescriptor(
         'trainval': 598,
         'val': 119,
     },
-    num_classes=6,
+    num_classes=9,
     ignore_label=255,
-    label_weights=[1, 10, 3, 25, 10, 10],
+    label_weights=[1, 10, 2, 25, 10, 10, 1, 100, 75],
 )
 
 # These number (i.e., 'train'/'test') seems to have to be hard coded
