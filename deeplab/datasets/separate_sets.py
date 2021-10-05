@@ -50,6 +50,7 @@ def main(unused_argv):
   input_files = glob.glob(os.path.join(input_image_dir,
                                        '*.' + FLAGS.input_image_format))
   filenames = [os.path.splitext(os.path.basename(x))[0] for x in input_files]
+  filenames = [x for x in filenames if not (x.lower().startswith("pacjent 6") or x.lower().startswith("pacjent 7") or x.lower().startswith("pacjent 2a"))]
   filenames = np.array(filenames)
   train_set, validation_set = _separate_sets(filenames)
 

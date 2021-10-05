@@ -116,14 +116,15 @@ _IRIS_SEG_INFORMATION = DatasetDescriptor(
 
 _HIP_SEG_INFORMATION = DatasetDescriptor(
     splits_to_sizes={
-        'train': 479,
-        'trainval': 598,
-        'val': 119,
+        'train': 368,
+        'trainval': 459,
+        'val': 91,
     },
-    num_classes=6,
+    num_classes=9,
     ignore_label=255,
-    label_weights=[1, 10, 3, 25, 10, 10],
+    label_weights=[1, 10, 10, 15, 10, 10, 1, 25, 20],
 )
+
 
 # These number (i.e., 'train'/'test') seems to have to be hard coded
 # You are required to figure it out for your training/testing example.
